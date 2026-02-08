@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍫 Happy Chocolate Day 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family: 'Playfair Display', serif;
+  background: radial-gradient(circle at top, #3b1f1f, #1a0d0d);
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+h1{
+  margin-top:40px;
+  font-size:2.8rem;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing:1px;
+  animation: fadeIn 2s ease;
+}
+
+
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  margin-top:50px;
+}
+
+.choco{
+  width:120px;
+  height:120px;
+  border-radius:12px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  transition:0.5s;
+  position:relative;
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+.choco:hover{
+  transform:scale(1.1) rotate(5deg);
+}
+
+.hidden-message{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  font-size:0.9rem;
+  opacity:0;
+  transition:0.5s;
+  border-radius:12px;
+}
+
+.choco.open .hidden-message{
+  opacity:1;
+}
+
+.milk{ background:#7b4b2a; box-shadow:0 0 20px rgba(255,255,255,0.4);}
+.dark{ background:#2b1a12; box-shadow:0 0 20px rgba(255,255,255,0.4);}
+.white{
+  background:#f5e6d3;
+  color:#2b1a12;
+  font-weight:600;
+  box-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+.ruby{ background:#c84a6c; box-shadow:0 0 20px rgba(255,255,255,0.4);}
+.unsweet{ background:#1c0f08; box-shadow:0 0 20px rgba(255,255,255,0.4);}
+.couverture{ background:linear-gradient(135deg,#3d1f1f,#8b5a2b); box-shadow:0 0 20px rgba(255,255,255,0.4);}
+
+button{
+  margin-top:50px;
+  padding:12px 25px;
+  background:#ff4d6d;
+  border:none;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  color:white;
+  transition:0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight:500;
+  letter-spacing:0.5px;
+
+}
+
+button:hover{
+  background:#ff1f4d;
+}
+
+
+#cardPage{
+  display:none;
+  margin-top:50px;
+}
+
+.card{
+  width:320px;
+  height:220px;
+  margin:40px auto;
+  perspective:1500px;
+  cursor:pointer;
+  position:relative;
+}
+
+.card-cover{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#ff4d6d,#ff8fa3);
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Great Vibes', cursive;
+  font-size:2rem;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+  transition:0.8s;
+  transform-origin:left;
+  position:absolute;
+  z-index:2;
+  backface-visibility:hidden;
+}
+
+.card.open .card-cover{
+  transform:rotateY(-160deg);
+}
+
+.card-inside{
+  width:100%;
+  height:100%;
+  background:white;
+  border-radius:15px;
+  display:flex;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+.card-left,
+.card-right{
+  width:50%;
+  padding:20px;
+}
+
+.card-left{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card-left img{
+  width:100%;
+  border-radius:10px;
+  border:3px solid #ff4d6d;
+  box-shadow:0 0 20px rgba(255,77,109,0.6);
+}
+
+.card-right{
+  font-family:'Playfair Display', serif;
+  font-size:0.9rem;
+  color:#333;
+  display:flex;
+  align-items:center;
+}
+
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+#introPage{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle at center, #2b0f0f, #000);
+  text-align:center;
+  animation: fadeIn 2s ease;
+}
+
+.portal{
+  position:relative;
+}
+
+.heart{
+  width:120px;
+  height:110px;
+  background:#7b3f00;
+  position:relative;
+  margin:0 auto 30px;
+  transform:rotate(-45deg);
+  animation: glow 2s infinite alternate;
+}
+
+.heart:before,
+.heart:after{
+  content:"";
+  width:120px;
+  height:110px;
+  background:#7b3f00;
+  border-radius:50%;
+  position:absolute;
+}
+
+.heart:before{
+  top:-60px;
+  left:0;
+}
+
+.heart:after{
+  left:60px;
+  top:0;
+}
+
+@keyframes glow{
+  from{ box-shadow:0 0 10px #ff4d6d; }
+  to{ box-shadow:0 0 40px #ff4d6d; }
+}
+
+.intro-text{
+  font-size:2rem;
+  opacity:0;
+  animation: fadeText 3s forwards 1.5s;
+  font-family: 'Great Vibes', cursive;
+
+
+}
+
+@keyframes fadeText{
+  to{ opacity:1; }
+}
+
+.melt-btn{
+  margin-top:30px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.melt-btn:hover{
+  transform:scale(1.1);
+  background:#ff1f4d;
+}
+
+.crack{
+  animation: crackHeart 1s forwards;
+}
+
+@keyframes crackHeart{
+  0%{ transform:rotate(-45deg) scale(1); }
+  50%{ transform:rotate(-45deg) scale(1.2); }
+  100%{ opacity:0; transform:rotate(-45deg) scale(0); }
+}
+
+.emoji{
+  position:fixed;
+  top:-50px;
+  font-size:25px;
+  pointer-events:none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall{
+  0%{
+    transform: translateY(0);
+    opacity:1;
+  }
+  100%{
+    transform: translateY(110vh);
+    opacity:0.8;
+  }
+}
+
+/* MULTIVERSE PAGE */
+#multiversePage{
+  display:none;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: url("multiverse-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.multiverse-container{
+  backdrop-filter: blur(5px);
+}
+
+.glitch-text{
+  font-size:2rem;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker{
+  0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+  20%,24%,55%{opacity:0.4;}
+}
+
+.orb{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background: radial-gradient(circle,#8b5a2b,#3d1f1f);
+  margin:30px auto;
+  animation: floatOrb 3s infinite ease-in-out;
+  box-shadow:0 0 40px #ff4d6d;
+}
+
+@keyframes floatOrb{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+  100%{transform:translateY(0);}
+}
+
+.portal-btn{
+  padding:15px 35px;
+  font-size:1.1rem;
+  background:#ff4d6d;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.portal-btn:hover{
+  transform:scale(1.1);
+}
+
+/* BROKEN PAGE */
+#brokenPage{
+  display:none;
+  min-height:100vh;
+  padding-top:60px;
+  background: url("broken-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  text-align:center;
+}
+
+.portal-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  margin-top:50px;
+}
+
+.portal-box{
+  width:220px;
+  padding:20px;
+  background:rgba(0,0,0,0.7);
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.portal-box:hover{
+  transform:scale(1.05);
+}
+
+.correct{
+  border:2px solid #ff4d6d;
+}
+
+#collapseText{
+  margin-top:40px;
+  font-size:1.3rem;
+  color:#ffb3c6;
+}
+
+/* GLITCH EFFECT */
+.glitch{
+  animation: shake 0.3s linear 3;
+}
+
+@keyframes shake{
+  0%{transform:translate(0);}
+  25%{transform:translate(-5px,5px);}
+  50%{transform:translate(5px,-5px);}
+  75%{transform:translate(-5px,5px);}
+  100%{transform:translate(0);}
+}
+
+.stabilize{
+  box-shadow:0 0 60px #ff4d6d;
+  transform:scale(1.2);
+  transition:1s;
+}
+
+#correctMessage{
+  animation: fadeIn 1.5s ease forwards;
+}
+
+#gameIntroPage{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: url("game-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.game-intro-box{
+  background:rgba(0,0,0,0.7);
+  padding:40px;
+  border-radius:20px;
+}
+
+#layerGamePage{
+  min-height:100vh;
+  padding-top:50px;
+  background: url("game-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+/* MERGE PAGE */
+#mergePage{
+  display:none;
+  height:100vh;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+}
+
+
+.choco-preview{
+  width:200px;
+  height:250px;
+  margin:30px auto;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 0 30px #ff4d6d;
+}
+
+.layer{
+  height:33%;
+  transition:0.5s;
+}
+
+.step{
+  margin-top:20px;
+}
+
+.step button{
+  margin:10px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 600px){
+
+  h1{
+    font-size:1.6rem;
+    margin-top:20px;
+  }
+
+  .portal-box{
+    width:90%;
+  }
+
+  .choco-preview{
+    width:150px;
+    height:200px;
+  }
+
+  .card{
+    width:90%;
+    height:180px;
+  }
+
+  .container{
+    gap:15px;
+  }
+
+  .choco{
+    width:100px;
+    height:100px;
+    font-size:0.9rem;
+  }
+
+  button{
+    font-size:0.9rem;
+    padding:10px 20px;
+  }
+}
+
+/* MERGE ACTIVITY */
+
+.choco-half{
+  position:absolute;
+  width:120px;
+  height:160px;
+  border-radius:12px;
+  cursor:grab;
+  top:40%;
+  background:linear-gradient(145deg,#8b5a2b,#3d1f1f);
+  box-shadow:0 0 30px rgba(255,77,109,0.6);
+  transition:0.3s;
+  touch-action: none;
+}
+
+
+#leftHalf{
+  left:10%;
+}
+
+#rightHalf{
+  right:10%;
+}
+
+.merge-glow{
+  box-shadow:0 0 60px #ff4d6d;
+  transform:scale(1.1);
+}
+
+.bg-warm{
+  background:radial-gradient(circle at center,#ff8fa3,#3b1f1f);
+  transition:1s;
+}
+
+.bg-merged{
+  background:radial-gradient(circle at center,#ff4d6d,#1a0d0d);
+  transition:1s;
+}
+/* FINAL BIG BEATING HEART */
+
+.big-heart-container{
+  margin-top:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.big-heart{
+  width:120px;
+  height:110px;
+  background:#e0002a;
+  position:relative;
+  transform:rotate(-45deg);
+  animation: heartbeat 1s infinite;
+  box-shadow:0 0 40px rgba(224,0,42,0.8);
+
+}
+
+.big-heart:before,
+.big-heart:after{
+  content:"";
+  width:120px;
+  height:110px;
+  background:#e0002a;
+  border-radius:50%;
+  position:absolute;
+}
+
+.big-heart:before{
+  top:-60px;
+  left:0;
+}
+
+.big-heart:after{
+  left:60px;
+  top:0;
+}
+
+@keyframes heartbeat{
+  0%{ transform:rotate(-45deg) scale(1); }
+  25%{ transform:rotate(-45deg) scale(1.1); }
+  40%{ transform:rotate(-45deg) scale(1); }
+  60%{ transform:rotate(-45deg) scale(1.15); }
+  100%{ transform:rotate(-45deg) scale(1); }
+}
+
+/* Mobile adjustment */
+@media (max-width:600px){
+  .big-heart{
+    width:90px;
+    height:85px;
+  }
+  .big-heart:before,
+  .big-heart:after{
+    width:90px;
+    height:85px;
+  }
+  .big-heart:before{
+    top:-45px;
+  }
+  .big-heart:after{
+    left:45px;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="introPage">
+  <div class="portal">
+    <div class="heart"></div>
+    <p class="intro-text">
+      Let's make this Chocolate Day as<br>
+      sweet as our bond is🍫😘.....
+    </p>
+    <button class="melt-btn" onclick="enterPortal()">✨ Melt Into It</button>
+  </div>
+</div>
+
+<!-- MULTIVERSE PAGE -->
+<div id="multiversePage" style="display:none;">
+  <div class="multiverse-container">
+    <h1 class="glitch-text">
+      Choose the Universe you think we should be in.....
+    </h1>
+
+    <div class="orb"></div>
+
+    <button class="portal-btn" onclick="goToBrokenUniverses()">
+      ✨ Enter the Multiverse
+    </button>
+  </div>
+</div>
+
+<!-- BROKEN UNIVERSES PAGE -->
+<div id="brokenPage" style="display:none;">
+  <h1 class="broken-title">Choose a Timeline</h1>
+
+  <div class="portal-grid">
+    <div class="portal-box" onclick="collapseTimeline(this)">
+      Universe where we never met
+    </div>
+
+    <div class="portal-box" onclick="collapseTimeline(this)">
+      Universe where ego won
+    </div>
+
+    <div class="portal-box" onclick="collapseTimeline(this)">
+      Universe where distance defeated us
+    </div>
+
+    <div class="portal-box correct" onclick="correctTimeline()">
+      Universe where we chose each other
+    </div>
+  </div>
+
+  <p id="collapseText"></p>
+<div id="correctMessage" style="display:none; margin-top:30px;">
+  <h2 style="color:#ff4d6d;">Correct timeline detected.</h2>
+  <p>Thank you so much for choosing us. 💖</p>
+
+  <button onclick="goToGameIntro()" style="margin-top:20px;">
+  ➜ Move to Mini-Game
+</button>
+
+</div>
+
+</div>
+
+<!-- GAME INSTRUCTION PAGE -->
+<div id="gameIntroPage" style="display:none;">
+  <div class="game-intro-box">
+    <h1>🍫 Build Our Chocolate 🍫</h1>
+    <p>
+      Before we move forward…  
+      Let’s create something that represents us.
+    </p>
+
+    <ul>
+      <li>Step 1: Choose the base chocolate</li>
+      <li>Step 2: Choose a filling that matches our vibe</li>
+      <li>Step 3: Add the perfect topping</li>
+    </ul>
+
+    <button onclick="startGame()">Start Game ✨</button>
+  </div>
+</div>
+
+<!-- LAYER BUILDER GAME -->
+<div id="layerGamePage" style="display:none;">
+  <h1>Build Your Chocolate</h1>
+
+  <div class="choco-preview">
+    <div id="baseLayer" class="layer"></div>
+    <div id="fillingLayer" class="layer"></div>
+    <div id="toppingLayer" class="layer"></div>
+  </div>
+
+  <div id="gameSteps">
+
+    <div class="step">
+      <h3>Choose Base</h3>
+      <button onclick="chooseBase('milk')">Milk</button>
+      <button onclick="chooseBase('dark')">Dark</button>
+      <button onclick="chooseBase('white')">White</button>
+      <button onclick="chooseBase('ruby')">Ruby</button>
+    </div>
+
+    <div class="step" id="fillingStep" style="display:none;">
+      <h3>Choose Filling</h3>
+      <button onclick="chooseFilling('caramel')">Caramel</button>
+      <button onclick="chooseFilling('hazelnut')">Hazelnut</button>
+      <button onclick="chooseFilling('strawberry')">Strawberry</button>
+      <button onclick="chooseFilling('coffee')">Coffee</button>
+    </div>
+
+    <div class="step" id="toppingStep" style="display:none;">
+      <h3>Choose Topping</h3>
+      <button onclick="chooseTopping('sprinkles')">Sprinkles</button>
+      <button onclick="chooseTopping('gold')">Gold Flakes</button>
+      <button onclick="chooseTopping('hearts')">Hearts</button>
+      <button onclick="chooseTopping('nuts')">Crushed Nuts</button>
+    </div>
+
+  </div>
+
+  <div id="resultMessage" style="display:none; margin-top:30px;"></div>
+
+  <button id="continueToChoco" style="display:none;" onclick="goToMergePage()">
+    Continue to Choose Chocolates ➜
+  </button>
+
+</div>
+
+<!-- PARALLEL UNIVERSE MERGE PAGE -->
+<div id="mergePage" style="display:none; height:100vh; position:relative; overflow:hidden; background:radial-gradient(circle at center,#1a0d0d,#000);">
+
+  <h1 style="margin-top:40px;">Bring The Universes Together</h1>
+
+  <div id="mergeArea" style="position:relative; height:60vh;">
+
+    <div id="leftHalf" class="choco-half"></div>
+    <div id="rightHalf" class="choco-half"></div>
+
+  </div>
+
+  <div id="mergeMessage" style="display:none; margin-top:20px; font-size:1.3rem;">
+    Every version of me finds you. 💖
+  </div>
+
+  <button id="mergeNextBtn" style="display:none;" onclick="goToChocolates()">
+    Continue to Choose Chocolates ➜
+  </button>
+
+</div>
+
+
+<div id="mainContent" style="display:none;">
+
+<h1 id="chocoHeading">🍫 Choose Your Chocolate 💖</h1>
+
+
+<div class="container">
+  <div class="choco milk" onclick="openChoco(this)">Milk
+    <div class="hidden-message">You make my life sweet like milk chocolate 🤍</div>
+  </div>
+
+  <div class="choco dark" onclick="openChoco(this)">Dark
+    <div class="hidden-message">Even in darkness, you light up my world.💗</div>
+  </div>
+
+  <div class="choco white" onclick="openChoco(this)">White
+    <div class="hidden-message">Pure, soft, and comforting like you 🤍</div>
+  </div>
+
+  <div class="choco ruby" onclick="openChoco(this)">Ruby
+    <div class="hidden-message">You color my world pink and magical 💗</div>
+  </div>
+
+  <div class="choco unsweet" onclick="openChoco(this)">Unsweet
+    <div class="hidden-message">No extras needed — you’re already everything.❤️</div>
+  </div>
+
+  <div class="choco couverture" onclick="openChoco(this)">Couverture
+    <div class="hidden-message">The finest thing in my life is YOU ✨</div>
+  </div>
+</div>
+
+<button id="nextBtn" style="display:none;" onclick="showCard()">
+  Open Your Final Surprise 💌
+</button>
+
+
+<div id="cardPage">
+  <div class="card" onclick="this.classList.toggle('open')">
+
+    <div class="card-cover">
+      Happy Chocolate Day 🍫💝
+    </div>
+
+    <div class="card-inside">
+
+      <div class="card-left">
+        <img src="myphoto.jpg" alt="Our Memory">
+      </div>
+
+      <div class="card-right">
+        <div>
+          Every chocolate melts… but my love for you only grows sweeter each day.
+          Thank you for choosing me, for loving me, and for being my forever favorite blessing. 🍫💖
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>   <!-- closes card -->
+
+<div class="big-heart-container">
+  <div class="big-heart"></div>
+</div>
+
+</div>   <!-- closes cardPage -->
+
+</div>
+<script>
+let openedCount = 0;
+
+function openChoco(el){
+  if(!el.classList.contains("open")){
+    el.classList.add("open");
+    openedCount++;
+  }
+
+  if(openedCount === 6){
+    document.getElementById("nextBtn").style.display = "inline-block";
+  }
+}
+
+function showCard(){
+  document.querySelector(".container").style.display="none";
+  document.getElementById("nextBtn").style.display="none";
+  document.getElementById("chocoHeading").style.display="none";   // 👈 add this
+  document.getElementById("cardPage").style.display="block";
+}
+
+
+function enterPortal(){
+  const heart = document.querySelector(".heart");
+  heart.classList.add("crack");
+
+  // 🎵 START MUSIC
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.3;   // adjust volume (0.0 to 1.0)
+  music.play();
+
+  setTimeout(()=>{
+    document.getElementById("introPage").style.display="none";
+    document.getElementById("multiversePage").style.display="flex";
+
+    startEmojis();
+
+  },1000);
+}
+
+
+function goToBrokenUniverses(){
+  document.getElementById("multiversePage").style.display="none";
+  document.getElementById("brokenPage").style.display="block";
+}
+
+function collapseTimeline(el){
+  document.body.classList.add("glitch");
+
+  document.getElementById("collapseText").innerText =
+    "This timeline collapsed.";
+
+  setTimeout(()=>{
+    document.body.classList.remove("glitch");
+  },800);
+}
+
+function correctTimeline(){
+  const orb = document.querySelector(".orb");
+  orb.classList.add("stabilize");
+
+  document.getElementById("collapseText").innerText = "";
+
+  setTimeout(()=>{
+    document.getElementById("correctMessage").style.display="block";
+  },800);
+}
+
+function goToGameIntro(){
+  document.getElementById("brokenPage").style.display="none";
+  document.getElementById("correctMessage").style.display="none";
+  document.getElementById("gameIntroPage").style.display="flex";
+}
+
+
+function startEmojis(){
+
+  function createEmoji(){
+    const emojis = ["🍫","💖","✨","😍","💕"];
+    let span = document.createElement("span");
+    span.className = "emoji";
+    span.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+    span.style.left = Math.random()*100 + "vw";
+    span.style.animationDuration = 4 + Math.random()*3 + "s";
+    document.body.appendChild(span);
+
+    setTimeout(()=>{
+      span.remove();
+    },7000);
+  }
+
+  setInterval(createEmoji, 400);
+}
+
+function goToChocolates(){
+  document.getElementById("mergePage").style.display="none";   // 👈 ADD THIS
+  document.getElementById("brokenPage").style.display="none";
+  document.getElementById("gameIntroPage").style.display="none";
+  document.getElementById("layerGamePage").style.display="none";
+  document.getElementById("mainContent").style.display="block";
+
+  window.scrollTo(0,0);  // 👈 ensures it starts at top
+}
+
+
+let selectedBase = "";
+let selectedFilling = "";
+let selectedTopping = "";
+
+function startGame(){
+  document.getElementById("gameIntroPage").style.display="none";
+  document.getElementById("layerGamePage").style.display="block";
+}
+
+function chooseBase(base){
+  selectedBase = base;
+
+  const baseLayer = document.getElementById("baseLayer");
+
+  if(base === "milk"){
+    baseLayer.style.background = "#7b4b2a";
+  }
+  if(base === "dark"){
+    baseLayer.style.background = "#2b1a12";
+  }
+  if(base === "white"){
+    baseLayer.style.background = "#f5e6d3";
+  }
+  if(base === "ruby"){
+    baseLayer.style.background = "#c84a6c";
+  }
+
+  document.getElementById("fillingStep").style.display="block";
+}
+
+
+function chooseFilling(fill){
+  selectedFilling = fill;
+
+  const fillingLayer = document.getElementById("fillingLayer");
+
+  if(fill === "caramel"){
+    fillingLayer.style.background = "#d4a373";
+  }
+  if(fill === "hazelnut"){
+    fillingLayer.style.background = "#a47148";
+  }
+  if(fill === "strawberry"){
+    fillingLayer.style.background = "#ff4d6d";
+  }
+  if(fill === "coffee"){
+    fillingLayer.style.background = "#6f4e37";
+  }
+
+  document.getElementById("toppingStep").style.display="block";
+}
+
+function chooseTopping(top){
+  selectedTopping = top;
+
+  const toppingLayer = document.getElementById("toppingLayer");
+
+  toppingLayer.innerHTML = "";
+
+  if(top === "sprinkles"){
+    toppingLayer.innerHTML = "✨✨✨";
+  }
+  if(top === "gold"){
+    toppingLayer.innerHTML = "🌟🌟";
+  }
+  if(top === "hearts"){
+    toppingLayer.innerHTML = "💖💖💖";
+  }
+  if(top === "nuts"){
+    toppingLayer.innerHTML = "🥜🥜";
+  }
+
+  showResult();
+}
+
+
+function showResult(){
+  let message = "";
+
+  if(selectedBase==="dark" && selectedFilling==="strawberry" && selectedTopping==="hearts"){
+    message = "You’re intense outside but secretly the softest for me. 💖";
+  } else {
+    message = "No matter how you built it… it’s perfect because it’s ours. 🍫✨";
+  }
+
+  document.getElementById("resultMessage").innerText = message;
+  document.getElementById("resultMessage").style.display="block";
+  document.getElementById("continueToChoco").style.display="inline-block";
+}
+
+function goToGameIntro(){
+  document.getElementById("brokenPage").style.display="none";
+  document.getElementById("correctMessage").style.display="none";
+  document.getElementById("gameIntroPage").style.display="flex";
+}
+
+function goToMergePage(){
+  document.getElementById("layerGamePage").style.display="none";
+  document.getElementById("mergePage").style.display="block";
+  initMerge();
+}
+
+function initMerge(){
+
+  const left = document.getElementById("leftHalf");
+  const right = document.getElementById("rightHalf");
+  const mergePage = document.getElementById("mergePage");
+
+  // Reset positions
+  left.style.left = "10%";
+  right.style.left = "70%";
+
+  function checkDistance(){
+    const distance = Math.abs(left.offsetLeft - right.offsetLeft);
+
+    if(distance < 200){
+      mergePage.classList.add("bg-warm");
+      left.classList.add("merge-glow");
+      right.classList.add("merge-glow");
+    }
+
+    if(distance < 80){
+      mergePage.classList.remove("bg-warm");
+      mergePage.classList.add("bg-merged");
+
+      left.style.left = "45%";
+      right.style.left = "55%";
+
+      document.getElementById("mergeMessage").style.display="block";
+      document.getElementById("mergeNextBtn").style.display="inline-block";
+
+      // stop further movement
+      left.onmousedown = null;
+      right.onmousedown = null;
+      left.ontouchstart = null;
+      right.ontouchstart = null;
+    }
+  }
+
+  function dragElement(el){
+
+    function moveAt(clientX){
+      el.style.left = clientX - el.offsetWidth/2 + "px";
+      checkDistance();
+    }
+
+    // DESKTOP
+    el.onmousedown = function(e){
+      document.onmousemove = function(e){
+        moveAt(e.clientX);
+      };
+      document.onmouseup = function(){
+        document.onmousemove = null;
+      };
+    };
+
+    // MOBILE
+    el.ontouchstart = function(e){
+      document.ontouchmove = function(e){
+        moveAt(e.touches[0].clientX);
+      };
+      document.ontouchend = function(){
+        document.ontouchmove = null;
+      };
+    };
+  }
+
+  dragElement(left);
+  dragElement(right);
+}
+
+</script>
+
+</body>
+</html>
